@@ -46,7 +46,7 @@
                             md="4"
                         >
                           <v-text-field
-
+                              :rules="rules"
                               v-model="editedGame.name"
                               label="Game name"
                           ></v-text-field>
@@ -129,6 +129,7 @@
                             md="4"
                         >
                           <v-text-field
+                              :rules="rules"
                               v-model="editedGame.name"
                               label="Game name"
                           ></v-text-field>
@@ -139,6 +140,7 @@
                             md="4"
                         >
                           <v-select
+                              :rules="rules"
                               :items="gamePlatform"
                               v-model="editedGame.platform"
                               label="Platform"
@@ -150,6 +152,7 @@
                             md="4"
                         >
                           <v-select
+                              :rules="rules"
                               :items="gameGenre"
                               v-model="editedGame.genre"
                               label="genre"
@@ -270,6 +273,7 @@ export default {
     dialogAdd: false,
     dialogDelete: false,
     dialogUpdateRating: false,
+    rules:[v => !!v || 'Field is required'],
     headers: [
       {text: 'ID', align: 'start', sortable: false, value: 'id',},
       {text: 'Game Name', value: 'name'},
@@ -330,15 +334,20 @@ export default {
     },
 
     editGame() {
-      let editGame = {
-        name: this.editedGame.name,
-        platform: this.editedGame.platform,
-        genre: this.editedGame.genre,
-        rating: this.editedGame.rating
+      if(this.editedGame.name !== ''){
+        let editGame = {
+          name: this.editedGame.name,
+          platform: this.editedGame.platform,
+          genre: this.editedGame.genre,
+          rating: this.editedGame.rating
+        }
+        Gameservice.updateGame(this.gameIndex, editGame)
+        this.dialogEdit = false
+        this.updatePage()
+      }else {
+        window.confirm("Name Field can NOT be Empty!!!")
       }
-      Gameservice.updateGame(this.gameIndex, editGame)
-      this.dialogEdit = false
-      this.updatePage()
+
     },
 
     deleteGame() {
@@ -369,15 +378,20 @@ export default {
     },
 
     addGame() {
-      let game = {
-        name: this.editedGame.name,
-        platform: this.editedGame.platform,
-        genre: this.editedGame.genre,
-        rating: this.editedGame.rating
+      if(this.editedGame.name !== '' && this.editedGame.platform !== ''&& this.editedGame.genre !== '' ){
+        let game = {
+          name: this.editedGame.name,
+          platform: this.editedGame.platform,
+          genre: this.editedGame.genre,
+          rating: this.editedGame.rating
+        }
+        Gameservice.addGame(game)
+        this.dialogAdd = false
+        this.updatePage()
+      }else {
+        window.confirm("Please fill all Fields")
       }
-      Gameservice.addGame(game)
-      this.dialogAdd = false
-      this.updatePage()
+
     },
 
     updatePage() {

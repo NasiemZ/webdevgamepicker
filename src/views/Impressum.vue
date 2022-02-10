@@ -5,14 +5,13 @@
         <h1 class="white--text">Imprint</h1>
         <v-divider class="white"></v-divider>
         <h4 class="white--text">Address</h4>
-        <v-divider class="white"></v-divider>
+
         <p class="white--text">Gamepicker GmbH </p>
         <p class="white--text">test straße 30</p>
         <p class="white--text">12345 test Stadt</p>
         <v-divider class="white"></v-divider>
         <v-spacer></v-spacer>
         <h4 class="white--text">contact</h4>
-        <v-divider class="white"></v-divider>
         <p class="white--text">gamepicker@gmpicker.de</p>
         <p class="white--text">+49 03 12345678</p>
 

@@ -75,7 +75,7 @@ export default {
     return {
       page: 1,
       pageCount: 0,
-      itemsPerPage: 10,
+      itemsPerPage: 5,
       headers: [
         {text: 'ID', value: 'id',},
         {text: 'Game Name', value: 'name'},

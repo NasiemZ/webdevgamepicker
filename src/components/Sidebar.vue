@@ -44,7 +44,7 @@ export default {
        { title: 'Home', icon: 'mdi-home',path: "/" },
        { title: 'View Game List', icon: 'mdi-view-list',path: "/viewgame" },
        { title: 'Random Game', icon: 'mdi-dice-6',path: "/random" },
-       { title: 'Impressum', icon: 'mdi-domain',path: "/impressum" },
+       { title: 'Imprint', icon: 'mdi-domain',path: "/impressum" },
        { title: 'FAQ', icon: 'mdi-help-box',path: "/faq" },
      ]
    }

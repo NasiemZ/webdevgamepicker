@@ -405,9 +405,7 @@ export default {
 </script>
 
 <style scoped>
-.test{
-  border-radius: 20px;
-}
+
 .picture {
   background: url("../assets/gaming.jpg") no-repeat center center fixed;
   background-size: cover;

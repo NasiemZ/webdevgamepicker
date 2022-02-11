@@ -35,7 +35,7 @@ export default {
     links: [
       {name: "Home", path: "/"} ,
       {name: "FAQ", path: "/faq"},
-      {name: "Impressum", path: "/impressum"},
+      {name: "Imprint", path: "/impressum"},
     ],
   }),
 }
